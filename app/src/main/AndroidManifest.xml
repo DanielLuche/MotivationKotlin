@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:theme="@style/Theme.AppCompat.LightNoActionBar" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".views.SplashActivity"
             android:theme="@style/Theme.AppCompat.LightFullScreen">
 
             <intent-filter>

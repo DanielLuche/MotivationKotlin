@@ -1,8 +1,11 @@
-package com.dluche.motivation
+package com.dluche.motivation.views
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Toast
+import com.dluche.motivation.R
 import com.dluche.motivation.util.MotivationContants
 import com.dluche.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -32,6 +35,16 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener{
     private fun handleSave() {
         val name: String = splash_et_name.text.toString()
         //
-        mSecurity.storeString(MotivationContants.KEY.PERSON_NAME,name)
+        if(name.trim().isEmpty()){
+            Toast.makeText(this,getString(R.string.digite_o_nome),Toast.LENGTH_LONG).show()
+        }else {
+            //
+            mSecurity.storeString(MotivationContants.KEY.PERSON_NAME, name)
+            //
+            val mIntent = Intent(this, MainActivity::class.java)
+            startActivity(mIntent)
+            //
+            //finish()
+        }
     }
 }

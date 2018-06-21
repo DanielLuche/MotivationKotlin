@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="menuItemSelected">#FFFFFF</color>
+    <color name="menuItemSelected">#b7cf3e</color>
     <color name="menuItemUnSelected">#CECECE</color>
 </resources>
