@@ -1,8 +1,14 @@
 package com.dluche.motivation.mock
 
 import com.dluche.motivation.util.MotivationContants
+import java.util.*
 
-class Phrase(description: String, category: Int)
+class Phrase(val description: String,val category: Int)
+
+//Criado função de extensão para classe Int poder usar o metdo random
+//que usado proprio inteiro que chama a extensão como 'limite'
+//do valor randomico.
+fun Int.random(): Int = Random().nextInt(this)
 
 class Mock {
     private val ALL = MotivationContants.PHRASE_FILTER.ALL
@@ -24,5 +30,15 @@ class Mock {
             Phrase("Se você acredita, faz toda a diferença.", SUN),
             Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada!", SUN)
     )
+
+    fun getPhrase(value: Int) : String{
+        //Filtra frases baseado na categoria passada.
+        val filtered = mListPhrases.filter { it -> (it.category == value || value == ALL)}
+
+        val rand = filtered.size.random()
+
+        return filtered[rand].description
+    }
+
 
 }

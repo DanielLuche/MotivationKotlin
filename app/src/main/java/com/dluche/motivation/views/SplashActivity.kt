@@ -22,6 +22,16 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener{
         mSecurity = SecurityPreferences(this)
         //
         splash_btn_save.setOnClickListener(this)
+        verifyUserName()
+    }
+
+    private fun verifyUserName() {
+        val user_name = mSecurity.getStoredString(MotivationContants.KEY.PERSON_NAME)
+        splash_et_name.setText(user_name)
+        //
+        if(user_name != ""){
+            handleSave()
+        }
     }
 
     override fun onClick(v: View) {

@@ -4,20 +4,33 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.dluche.motivation.R
+import com.dluche.motivation.mock.Mock
 import com.dluche.motivation.util.MotivationContants
+import com.dluche.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFilter: Int = MotivationContants.PHRASE_FILTER.ALL
+    private lateinit var mSecurityPreferences : SecurityPreferences
+    private val mMock = Mock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //
+        mSecurityPreferences = SecurityPreferences(this)
+        //
         setListners()
         //
         handleFilter(R.id.main_iv_all)
+        refreshPhrase()
+        //
+        verifyUserName()
+    }
+
+    private fun verifyUserName() {
+        main_tv_user_name.text = mSecurityPreferences.getStoredString(MotivationContants.KEY.PERSON_NAME)
     }
 
     override fun onClick(view: View) {
@@ -25,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val listId = listOf(R.id.main_iv_all,R.id.main_iv_sun,R.id.main_iv_happy)
         if(id in listId){
             handleFilter(id)
-        }else{
+        }else if(id == R.id.main_btn_new_phrase){
             refreshPhrase()
         }
     }
@@ -55,7 +68,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun refreshPhrase() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        main_tv_phrase.text = mMock.getPhrase(mFilter)
     }
 
 
