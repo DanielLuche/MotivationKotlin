@@ -2,5 +2,6 @@
     <string name="app_name">Motivation</string>
     <string name="informe_seu_nome">Informe seu nome</string>
     <string name="salvar">Salvar</string>
+    <string name="novaFrase">Nova Frase</string>
     <string name="digite_o_nome">Digite seu nome</string>
 </resources>

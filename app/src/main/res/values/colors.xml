@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0B121C</color>
-    <color name="colorPrimaryDark">#070B11</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorPrimary">#5ac25f</color>
+    <color name="colorPrimaryDark">#05a890</color>
+    <color name="colorAccent">#b1d762</color>
 
     <color name="black_overlay">#66000000</color>
 
-    <color name="menuItemSelected">#DEF5F5</color>
+    <color name="menuItemSelected">#FFFFFF</color>
     <color name="menuItemUnSelected">#B1B1B1</color>
+
+    <color name="colorTextLightGray">#F9f9f9</color>
+    <color name="colorTextButton">#FFFFFF</color>
+
+    <color name="colorLine">#f5f5f5</color>
+
+
+
+
 </resources>

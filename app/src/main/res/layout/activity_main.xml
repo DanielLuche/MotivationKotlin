@@ -4,68 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity">
+    tools:context=".views.MainActivity"
+    tools:layout_editor_absoluteY="25dp"
+    android:background="@drawable/bg_splash"
+    >
 
-    <LinearLayout
-        android:id="@+id/main_ll_menu_filter"
+    <View
+        android:id="@+id/view"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_height="83dp"
+        android:background="@color/colorPrimary"
+        android:elevation="1dp"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_iv_happy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/main_iv_all"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_all_unselected" />
+    <ImageView
+        android:id="@+id/main_iv_all"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:elevation="2dp"
+        android:src="@drawable/ic_all_unselected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/main_iv_sun"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_sun_unselected" />
+    <ImageView
+        android:id="@+id/main_iv_sun"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:elevation="2dp"
+        android:src="@drawable/ic_sun_unselected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/main_iv_happy"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_happy_unselected" />
+    <ImageView
+        android:id="@+id/main_iv_happy"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:elevation="2dp"
+        android:src="@drawable/ic_happy_selected"
+        app:layout_constraintEnd_toStartOf="@+id/main_iv_sun"
+        app:layout_constraintStart_toEndOf="@+id/main_iv_all"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
 
     <TextView
         android:id="@+id/main_tv_user_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:text="Usuario"
-        app:layout_constraintTop_toBottomOf="@id/main_ll_menu_filter"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:textColor="@color/colorTextLightGray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
         android:id="@+id/main_tv_phrase"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
         android:text="Phrase"
-        app:layout_constraintTop_toBottomOf="@id/main_tv_user_name"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+        android:textColor="@color/colorTextLightGray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/main_btn_new_phrase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_user_name" />
 
     <Button
         android:id="@+id/main_btn_new_phrase"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="niva frase"
-        app:layout_constraintTop_toBottomOf="@id/main_tv_phrase"
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/novaFrase"
+        android:textColor="@color/colorTextButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

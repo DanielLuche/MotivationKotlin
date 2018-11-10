@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun verifyUserName() {
-        main_tv_user_name.text = mSecurityPreferences.getStoredString(MotivationContants.KEY.PERSON_NAME)
+        main_tv_user_name.text = "Olá " + mSecurityPreferences.getStoredString(MotivationContants.KEY.PERSON_NAME)
     }
 
     override fun onClick(view: View) {
